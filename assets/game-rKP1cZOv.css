@@ -1,0 +1,546 @@
+button {
+    font-family: 'Alice', serif;
+}
+
+/****************
+ * Main Menu UI *
+ ****************/
+
+#main-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    cursor: default;
+}
+
+#main-menu-display {
+    display: flex;
+    width: 50%;
+    min-width: 320px;
+    height: 100vh;
+    min-height: 560px;
+    background-color: rgba(64, 64, 64, 0.6);
+    background: linear-gradient(to right, rgba(64,64,64,0.6), 60%, rgba(64,64,64,0.6), 90%, rgba(0,0,0,0));
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#main-menu-header-container {
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+}
+
+#main-menu-title {
+    font-weight: normal;
+    font-size: 72px;
+    padding: 0;
+    margin: 0;
+}
+
+#main-menu-subtitle {
+    font-weight: normal;
+    font-size: 36px;
+    padding: 0;
+    margin: 0;
+}
+
+#main-menu-button-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px;
+}
+
+#main-menu-button-list .button-inner-container {
+    margin: 8px;
+    padding: 4px;
+    border-radius: 32px;
+    background-color: transparent;
+}
+
+#main-menu-button-list button {
+    width: 100%;
+    font-size: 24px;
+    border: none;
+    color: white;
+    padding: 8px;
+    background-color: transparent;
+}
+
+
+#main-menu-button-list button:hover {
+    cursor: pointer;
+    color: #a94e83;
+}
+
+#main-menu-button-list .button-inner-container.primary {
+    width: 60%;
+    margin: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px;
+    border-radius: 32px;
+    background-color: #a94e83;
+}
+
+#main-menu-button-list button.primary {
+    font-size: 24px;
+    border: 4px solid #6d3154;
+    color: white;
+    padding: 8px;
+    border-radius: 32px;
+    background-color: #a94e83;
+}
+
+
+#main-menu-button-list button.primary:hover {
+    cursor: pointer;
+    border-color: white;
+}
+
+
+#main-menu-button-list .button-inner-container:first-child {
+    height: 120px;
+    border-radius: 60px;
+}
+
+#main-menu-button-list .button-inner-container:first-child button {
+    border-radius: 60px;
+    font-size: 48px;
+    height: 100%;
+}
+
+/**************
+ * Navigation *
+ **************/
+
+#room-navigation {
+    display: none;
+}
+
+#next {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    fill: #ffffff;
+    text-shadow: 2px 2px 5px black;
+}
+
+#next:hover {
+    fill: #a94e83;
+    cursor: pointer;
+}
+
+#prev {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    fill: #ffffff;
+    text-shadow: 2px 2px 5px black;
+}
+
+#prev:hover {
+    fill: #a94e83;
+    cursor: pointer;
+}
+
+
+
+/***********
+ * Brew UI *
+ ***********/
+
+#brew-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+}
+
+#brew-right-side {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: fixed;
+    right: 0;
+    width: 512px;
+    translate: 1024px 0;
+    min-width: 460px;
+    background-color: #efe4d6;
+    margin: 30px;
+    border-radius: 8px;
+    border: 8px solid #7c603f;
+    box-shadow: 0 8px #433321;
+}
+
+#brew-header-container {
+    background-color: #7c603f;
+    box-shadow: 0 8px #433321;
+}
+
+#brew-header-container h1 {
+    color: white;
+    text-align: center;
+    margin: 16px;
+}
+
+#brew-ingredients-container {
+    height: 110px;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: nowrap;
+
+}
+
+.ingredient-container {
+    border: 4px dashed #dec8ad;
+    flex-grow: 1;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.ingredient-container img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.ingredient-container:hover {
+    border: 4px dashed #7c603f;
+    cursor: pointer;
+}
+
+#brew-selected-container {
+    height: 220px;
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ingredient-selected-container {
+    border: 4px dashed #dec8ad;
+    flex-grow: 1;
+    border-radius: 8px;
+    padding: 4px;
+    max-height: 80px;
+}
+
+.ingredient-selected-container.disabled {
+    border: 4px dashed #adadad;
+    cursor: pointer;
+}
+
+.ingredient-selected-container .disabled-selected-ingredient {
+    text-align: center;
+    vertical-align: middle;
+    color: gray;
+}
+
+.ingredient-selected-container .active-selected-ingredient {
+    display: none;
+
+}
+
+.ingredient-selected-container .active-selected-ingredient .selected-ingredient-image {
+    border: 4px dashed #dec8ad;
+    border-radius: 40px;
+    margin: 4px;
+    width: 60px;
+    height: 60px;
+    padding: 4px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ingredient-selected-container .active-selected-ingredient .selected-ingredient-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+}
+
+.ingredient-selected-container .active-selected-ingredient .selected-ingredient-description {
+    margin: 12px;
+}
+
+.ingredient-selected-container .active-selected-ingredient .selected-ingredient-description h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.ingredient-selected-container .active-selected-ingredient .selected-ingredient-description p {
+    margin: 0;
+    padding: 0;
+}
+
+.ingredient-selected-container:hover {
+    border: 4px dashed #7c603f;
+    cursor: pointer;
+}
+
+.ingredient-selected-container.disabled:hover {
+    border: 4px dashed #adadad;
+    cursor: auto;
+}
+
+#brew-potion-summary-container {
+    height: 110px;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+#potion-icon-container {
+    border: 4px dashed #dec8ad;
+    border-radius: 50px;
+    margin: 15px;
+    width: 80px;
+    height: 80px;
+    padding: 4px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#potion-icon {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: #15122f;
+}
+
+#potion-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+}
+
+#potion-description {
+    margin-left: 0;
+}
+
+#potion-description h2 {
+    margin: 0px;
+}
+
+#potion-properties-list {
+    margin: 16px;
+    padding: 0;
+}
+
+ul#potion-properties-list li {
+    list-style: none;
+}
+
+#brew-button-container {
+    height: 50px;
+}
+
+#brew-button-inner-container {
+    position: fixed;
+    right: 70px;
+    padding: 2px;
+    margin-top: 25px;
+    border-radius: 32px;
+    width: 180px;
+    background-color: #a94e83;
+}
+
+#brew-button-container button {
+    font-size: 24px;
+    border: 4px solid #6d3154;
+    color: white;
+    padding: 8px;
+    border-radius: 32px;
+    width: 180px;
+    background-color: #a94e83;
+}
+
+#brew-button-container button:hover {
+    cursor: pointer;
+    border-color: white;
+}
+
+/***********
+ * Shop UI *
+ ***********/
+
+#shop-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+}
+
+#shop-panel {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: fixed;
+    left: 0;
+    translate: 1280px 0;
+    background-color: #efe4d6;
+    margin: 30px;
+    border-radius: 8px;
+    border: 8px solid #7c603f;
+    box-shadow: 0 8px #433321;
+}
+
+#shop-sides {
+    display: flex;
+    flex-direction: row;
+}
+
+#shop-header-container {
+    background-color: #7c603f;
+    box-shadow: 0 8px #433321;
+}
+
+#shop-header-container h1 {
+    color: white;
+    text-align: center;
+    margin: 16px;
+}
+
+#shop-left-side {
+    width: 432px;
+    padding: 16px;
+}
+
+#shop-potions-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px;
+    gap: 16px;
+}
+
+.potion-container {
+    position: relative;
+    border: 4px dashed #dec8ad;
+    border-radius: 16px;
+    padding: 4px;
+    width: 100px;
+}
+
+.potion-container:hover {
+    border: 4px dashed #7c603f;
+    cursor: pointer;
+}
+
+.potion-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.potion-container .potion-inventory-count {
+    position: absolute;
+    border-radius: 50%;
+    color: white;
+    text-align: right;
+    line-height: 24px;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    padding: 8px 12px;
+}
+
+#shop-right-side {
+    padding: 16px;
+}
+
+#shop-shelves-container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 34px;
+}
+
+.shop-shelf {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    border-bottom: 16px solid #8c5a4f;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+}
+
+.stocked-potion-container {
+    border: 4px dashed #dec8ad;
+    border-radius: 16px;
+    padding: 4px;
+    width: 100px;
+    height: 100px;
+}
+
+.stocked-potion-container:hover {
+    border: 4px dashed #7c603f;
+    cursor: pointer;
+}
+
+
+.stocked-potion-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.disabled-stocked-potion {
+    border: 4px dashed #adadad;
+    cursor: auto;
+}
+
+.disabled-stocked-potion:hover {
+    border: 4px dashed #adadad;
+    cursor: auto;
+}
+
+#shop-button-container {
+    height: 50px;
+}
+
+#shop-button-inner-container {
+    position: relative;
+    padding: 2px;
+    margin-top: 25px;
+    margin-left: 580px;
+    border-radius: 32px;
+    width: 180px;
+    background-color: #a94e83;
+}
+
+#shop-button-container button {
+    font-size: 24px;
+    border: 4px solid #6d3154;
+    color: white;
+    padding: 8px;
+    border-radius: 32px;
+    width: 180px;
+    background-color: #a94e83;
+}
+
+#shop-button-container button:hover {
+    cursor: pointer;
+    border-color: white;
+}
