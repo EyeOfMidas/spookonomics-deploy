@@ -1,3 +1,13 @@
+:root {
+    --dark-purple: #6d3154;
+    --light-purple: #a94e83;
+    --light-brown: #7c603f;
+    --dark-brown: #433321;
+
+    --tan: #efe4d6;
+}
+
+
 button {
     font-family: 'Alice', serif;
 }
@@ -25,7 +35,7 @@ button {
     height: 100vh;
     min-height: 560px;
     background-color: rgba(64, 64, 64, 0.6);
-    background: linear-gradient(to right, rgba(64,64,64,0.6), 60%, rgba(64,64,64,0.6), 90%, rgba(0,0,0,0));
+    background: linear-gradient(to right, rgba(64, 64, 64, 0.6), 60%, rgba(64, 64, 64, 0.6), 90%, rgba(0, 0, 0, 0));
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -78,7 +88,7 @@ button {
 
 #main-menu-button-list button:hover {
     cursor: pointer;
-    color: #a94e83;
+    color: var(--light-purple);
 }
 
 #main-menu-button-list .button-inner-container.primary {
@@ -88,16 +98,16 @@ button {
     margin-right: auto;
     padding: 4px;
     border-radius: 32px;
-    background-color: #a94e83;
+    background-color: var(--light-purple);
 }
 
 #main-menu-button-list button.primary {
     font-size: 24px;
-    border: 4px solid #6d3154;
+    border: 4px solid var(--dark-purple);
     color: white;
     padding: 8px;
     border-radius: 32px;
-    background-color: #a94e83;
+    background-color: var(--light-purple);
 }
 
 
@@ -135,7 +145,7 @@ button {
 }
 
 #next:hover {
-    fill: #a94e83;
+    fill: var(--light-purple);
     cursor: pointer;
 }
 
@@ -148,8 +158,99 @@ button {
 }
 
 #prev:hover {
-    fill: #a94e83;
+    fill: var(--light-purple);
     cursor: pointer;
+}
+
+
+/******************
+ * Game Status UI *
+ ******************/
+#game-status-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    color: #7E674F;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    transition: opacity 2s;
+}
+
+#game-status-container:hover {
+    /* opacity: 0.3; */
+}
+
+#game-status-panel {
+    width: 280px;
+    height: 100px;
+    background-color: var(--light-brown);
+    border-radius: 16px;
+    margin: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#currency-meter-container {
+    width: 100%;
+    height: 46px;
+    background-color: var(--tan);
+    border-radius: 8px;
+    display: flex;
+    gap: 0;
+}
+
+#currency-meter-container span {
+    padding: 12px 0 12px 0;
+    color: #7E674F;
+}
+
+#currency-meter-icon {
+    padding: 12px;
+}
+
+#currency-progress {
+    width: 170px;
+    height: 10px;
+    border-radius: 8px;
+    background-color: #dcd4ca;
+    margin: 16px 2px 12px 2px;
+}
+
+#currency-progress[value]::-webkit-progress-bar {
+    background-color: #dcd4ca;
+}
+
+#currency-progress[value]::-moz-progress-bar {
+    background-color: #ebac51;
+}
+
+#currency-progress[value]::-webkit-progress-value {
+    background-color: #ebac51;
+}
+
+#current-day-container {
+    width: 100%;
+    height: 46px;
+    background-color: var(--tan);
+    border-radius: 8px;
+    display: flex;
+    gap: 0;
+}
+
+#current-day-icon {
+    padding: 12px 12px 12px 12px;
+}
+
+#current-day-icon img {
+    width: 100%;
+}
+
+#current-day-text {
+    flex-grow: 2;
+    padding: 12px 12px 12px 0;
 }
 
 
@@ -178,16 +279,16 @@ button {
     width: 512px;
     translate: 1024px 0;
     min-width: 460px;
-    background-color: #efe4d6;
+    background-color: var(--tan);
     margin: 30px;
     border-radius: 8px;
-    border: 8px solid #7c603f;
-    box-shadow: 0 8px #433321;
+    border: 8px solid var(--light-brown);
+    box-shadow: 0 8px var(--dark-brown);
 }
 
 #brew-header-container {
-    background-color: #7c603f;
-    box-shadow: 0 8px #433321;
+    background-color: var(--light-brown);
+    box-shadow: 0 8px var(--dark-brown);
 }
 
 #brew-header-container h1 {
@@ -221,7 +322,7 @@ button {
 
 
 .ingredient-container:hover {
-    border: 4px dashed #7c603f;
+    border: 4px dashed var(--light-brown);
     cursor: pointer;
 }
 
@@ -289,7 +390,7 @@ button {
 }
 
 .ingredient-selected-container:hover {
-    border: 4px dashed #7c603f;
+    border: 4px dashed var(--light-brown);
     cursor: pointer;
 }
 
@@ -314,6 +415,7 @@ button {
     padding: 4px;
     text-align: center;
     vertical-align: middle;
+    position: relative;
 }
 
 #potion-icon {
@@ -328,6 +430,20 @@ button {
     width: 100%;
     height: 100%;
     border-radius: 40px;
+}
+
+#potion-icon-container .potion-inventory-count {
+    position: absolute;
+    border-radius: 50%;
+    color: white;
+    text-align: right;
+    line-height: 24px;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    padding: 8px 12px;
 }
 
 #potion-description {
@@ -358,17 +474,17 @@ ul#potion-properties-list li {
     margin-top: 25px;
     border-radius: 32px;
     width: 180px;
-    background-color: #a94e83;
+    background-color: var(--light-purple);
 }
 
 #brew-button-container button {
     font-size: 24px;
-    border: 4px solid #6d3154;
+    border: 4px solid var(--dark-purple);
     color: white;
     padding: 8px;
     border-radius: 32px;
     width: 180px;
-    background-color: #a94e83;
+    background-color: var(--light-purple);
 }
 
 #brew-button-container button:hover {
@@ -396,13 +512,13 @@ ul#potion-properties-list li {
     flex-direction: column;
     flex-wrap: nowrap;
     position: fixed;
-    left: 0;
-    translate: 1280px 0;
-    background-color: #efe4d6;
+    right: 0;
+    translate: 1024px 0;
+    background-color: var(--tan);
     margin: 30px;
     border-radius: 8px;
-    border: 8px solid #7c603f;
-    box-shadow: 0 8px #433321;
+    border: 8px solid var(--light-brown);
+    box-shadow: 0 8px var(--dark-brown);
 }
 
 #shop-sides {
@@ -411,8 +527,8 @@ ul#potion-properties-list li {
 }
 
 #shop-header-container {
-    background-color: #7c603f;
-    box-shadow: 0 8px #433321;
+    background-color: var(--light-brown);
+    box-shadow: 0 8px var(--dark-brown);
 }
 
 #shop-header-container h1 {
@@ -442,7 +558,7 @@ ul#potion-properties-list li {
 }
 
 .potion-container:hover {
-    border: 4px dashed #7c603f;
+    border: 4px dashed var(--light-brown);
     cursor: pointer;
 }
 
@@ -495,7 +611,7 @@ ul#potion-properties-list li {
 }
 
 .stocked-potion-container:hover {
-    border: 4px dashed #7c603f;
+    border: 4px dashed var(--light-brown);
     cursor: pointer;
 }
 
@@ -517,30 +633,91 @@ ul#potion-properties-list li {
 }
 
 #shop-button-container {
-    height: 50px;
+    height: 0;
 }
 
 #shop-button-inner-container {
     position: relative;
     padding: 2px;
-    margin-top: 25px;
+    margin-top: -25px;
     margin-left: 580px;
     border-radius: 32px;
     width: 180px;
-    background-color: #a94e83;
+    background-color: var(--light-purple);
 }
 
 #shop-button-container button {
     font-size: 24px;
-    border: 4px solid #6d3154;
+    border: 4px solid var(--dark-purple);
     color: white;
     padding: 8px;
     border-radius: 32px;
     width: 180px;
-    background-color: #a94e83;
+    background-color: var(--light-purple);
 }
 
 #shop-button-container button:hover {
+    cursor: pointer;
+    border-color: white;
+}
+
+
+
+/****************
+ * Game Over UI *
+ ****************/
+
+#game-over-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+}
+
+#game-over-blackout {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-over-panel {
+    width: 600px;
+    height: 400px;
+    text-align: center;
+    padding: 32px;
+    color: white;
+}
+
+#play-again-button-container {
+    width: 184px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#play-again-button-inner-container {
+    padding: 2px;
+    border-radius: 32px;
+    width: 180px;
+    background-color: var(--light-purple);
+}
+
+#play-again-button-container button {
+    font-size: 24px;
+    border: 4px solid var(--dark-purple);
+    color: white;
+    padding: 8px;
+    border-radius: 32px;
+    width: 180px;
+    background-color: var(--light-purple);
+}
+
+#play-again-button-container button:hover {
     cursor: pointer;
     border-color: white;
 }
