@@ -129,6 +129,136 @@ button {
 }
 
 /**************
+ * Options UI *
+ **************/
+ #options-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    cursor: default;
+ }
+
+
+ #options-panel {
+    display: flex;
+    width: 50%;
+    min-width: 320px;
+    height: 100vh;
+    min-height: 560px;
+    background-color: rgba(64, 64, 64, 0.6);
+    background: linear-gradient(to right, rgba(64, 64, 64, 0.6), 60%, rgba(64, 64, 64, 0.6), 90%, rgba(0, 0, 0, 0));
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    translate: -1024px 0;
+}
+
+#options-back-button {
+    color: white;
+    font-size: 72px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 16px;
+}
+
+#options-back-button:hover {
+    cursor: pointer;
+}
+
+#options-header-container {
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+}
+
+#options-list-container {
+    color: white;
+    flex-grow: 1;
+}
+
+.option-container {
+    padding: 16px;
+    margin: 8px;
+}
+
+/**************
+ * Credits UI *
+ **************/
+ #credits-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    cursor: default;
+ }
+
+
+ #credits-panel {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(64, 64, 64, 0.6);
+    background: linear-gradient(to right, rgba(64, 64, 64, 0.6), 60%, rgba(64, 64, 64, 0.6), 90%, rgba(0, 0, 0, 0));
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    translate: -1024px 0;
+    position: relative;
+}
+
+#credits-back-button {
+    color: white;
+    font-size: 72px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 16px;
+}
+
+#credits-back-button:hover {
+    cursor: pointer;
+}
+
+#credits-text {
+    width: 512px;
+    text-align: center;
+    color: white;
+    overflow-y: auto;
+    height: 100%;
+    padding: 32px;
+}
+
+.credits-section {
+    padding: 32px;
+}
+.credits-section h3 {
+    margin: 0;
+}
+.credits-section p {
+    margin: 0;
+}
+
+.credits-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.credits-section a:hover {
+    text-decoration: underline;
+}
+
+/**************
  * Navigation *
  **************/
 
@@ -800,6 +930,35 @@ ul#potion-properties-list li {
     color: gray;
 }
 
+.add-ingredient-button {
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-top: 50px;
+    background-color: transparent;
+    font-size: 32px;
+    font-weight: bold;
+}
+.add-ingredient-button:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+.remove-ingredient-button {
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-top: 50px;
+    background-color: transparent;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.remove-ingredient-button:hover {
+    color: gray;
+    cursor: pointer;
+}
+
 .ingredient-in-cart-container {
     display: flex;
     flex-direction: column;
@@ -814,6 +973,7 @@ ul#potion-properties-list li {
     height: 24px;
     padding: 16px;
     font-weight: bold;
+    font-size: 32px;
 }
 
 #total-container {
