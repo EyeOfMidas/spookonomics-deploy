@@ -324,21 +324,21 @@ button {
 }
 
 #currency-meter-container {
-    width: 100%;
-    height: 46px;
+    width: 256px;
     background-color: var(--tan);
     border-radius: 8px;
     display: flex;
-    gap: 0;
+    justify-content: start;
+    gap: 8px;
+    padding: 12px;
 }
 
-#currency-meter-container span {
-    padding: 12px 0 12px 0;
+#currency-meter-container .meter-start,.meter-end {
     color: #7E674F;
 }
 
 #currency-meter-icon {
-    padding: 12px;
+    /* padding: 12px; */
 }
 
 #currency-progress {
@@ -346,23 +346,30 @@ button {
     height: 10px;
     border-radius: 8px;
     background-color: #dcd4ca;
-    margin: 16px 2px 12px 2px;
+    position: relative;
+    display: inline-block;
+    flex-grow: 1;
+    margin: 6px;
 }
 
-#currency-progress[value]::-webkit-progress-bar {
-    background-color: #dcd4ca;
+#currency-meter-container:hover #currency-amount {
+    opacity: 1;
 }
 
-#currency-progress:after {
-    content: attr(value);
-  }
-
-#currency-progress[value]::-moz-progress-bar {
+#currency-progress-amount {
+    width: 50%;
+    height: 10px;
+    border-radius: 8px;
     background-color: #ebac51;
 }
 
-#currency-progress[value]::-webkit-progress-value {
-    background-color: #ebac51;
+#currency-amount {
+    display: block;
+    opacity: 0;
+    text-align: right;
+    line-height: 8px;
+    margin-right: 8px;
+    transition: 0.3s opacity;
 }
 
 #current-day-container {
