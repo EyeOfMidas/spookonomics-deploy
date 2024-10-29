@@ -223,6 +223,10 @@ button {
     background-color: #dcd4ca;
 }
 
+#currency-progress:after {
+    content: attr(value);
+  }
+
 #currency-progress[value]::-moz-progress-bar {
     background-color: #ebac51;
 }
@@ -312,6 +316,7 @@ button {
     flex-grow: 1;
     border-radius: 8px;
     padding: 4px;
+    position: relative;
 }
 
 .ingredient-container img {
@@ -319,7 +324,19 @@ button {
     height: 100%;
 }
 
-
+.ingredient-container .ingredient-inventory-brew-count {
+    position: absolute;
+    border-radius: 50%;
+    color: white;
+    text-align: right;
+    line-height: 24px;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    padding: 8px 12px;
+}
 
 .ingredient-container:hover {
     border: 4px dashed var(--light-brown);
@@ -657,6 +674,203 @@ ul#potion-properties-list li {
 }
 
 #shop-button-container button:hover {
+    cursor: pointer;
+    border-color: white;
+}
+
+
+/*************
+ * Market UI *
+ *************/
+ #market-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+}
+
+#market-panel {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: fixed;
+    right: 0;
+    width: 512px;
+    translate: 1024px 0;
+    background-color: var(--tan);
+    margin: 30px;
+    border-radius: 8px;
+    border: 8px solid var(--light-brown);
+    box-shadow: 0 8px var(--dark-brown);
+}
+
+#market-header-container {
+    background-color: var(--light-brown);
+    box-shadow: 0 8px var(--dark-brown);
+}
+
+#market-header-container h1 {
+    color: white;
+    text-align: center;
+    margin: 16px;
+}
+
+.ingredient-sell-container {
+    display: flex;
+    flex-direction: row;
+    height: 126px;
+}
+
+.ingredient-icon-container {
+    border: 4px dashed #dec8ad;
+    border-radius: 50px;
+    margin: 15px;
+    width: 80px;
+    height: 80px;
+    padding: 4px;
+    position: relative;
+}
+
+.ingredient-icon-container {
+    position: relative;
+    border: 4px dashed #dec8ad;
+    border-radius: 16px;
+    padding: 4px;
+}
+
+.ingredient-icon-container:hover {
+    border: 4px dashed var(--light-brown);
+    cursor: pointer;
+}
+
+.ingredient-icon-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.ingredient-icon-container .ingredient-inventory-count {
+    position: absolute;
+    border-radius: 50%;
+    color: white;
+    text-align: right;
+    line-height: 24px;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    padding: 8px 12px;
+}
+
+.ingredient-description {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+    align-items: start;
+    padding: 8px;
+    justify-content: center;
+}
+
+.ingredient-description h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+.ingredient-price {
+    padding: 4px;
+}
+
+.ingredient-price .ingredient-price-value {
+    margin-top: -24px;
+    margin-left: 24px;
+}
+
+.ingredient-price img {
+    padding-right: 8px;
+}
+
+.call-to-action {
+    font-size: 12px;
+    color: gray;
+}
+
+.ingredient-in-cart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ingredient-in-cart-container:hover {
+    cursor: pointer;
+}
+
+.ingredient-in-cart-amount {
+    height: 24px;
+    padding: 16px;
+    font-weight: bold;
+}
+
+#total-container {
+    border-top: 1px dotted gray;
+    text-align: right;
+    padding: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#total-icon-container {
+    margin-left: auto;
+    margin-top: 8px;
+    padding: 8px;
+}
+
+#total-title {
+    font-size: 18px;
+}
+
+#total-amount {
+    display: flex;
+    flex-direction: row;
+}
+
+#total-amount-value {
+    font-size: 42px;
+    text-align: right;
+}
+
+
+
+#market-button-container {
+    height: 0;
+}
+
+#market-button-inner-container {
+    position: relative;
+    padding: 2px;
+    margin-top: -25px;
+    margin-left: 300px;
+    border-radius: 32px;
+    width: 180px;
+    background-color: var(--light-purple);
+}
+
+#market-button-container button {
+    font-size: 24px;
+    border: 4px solid var(--dark-purple);
+    color: white;
+    padding: 8px;
+    border-radius: 32px;
+    width: 180px;
+    background-color: var(--light-purple);
+}
+
+#market-button-container button:hover {
     cursor: pointer;
     border-color: white;
 }
