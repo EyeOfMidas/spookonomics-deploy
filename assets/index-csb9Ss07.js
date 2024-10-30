@@ -4207,7 +4207,7 @@ void main()\r
 {\r
     float distanceToCenter = distance(gl_PointCoord, vec2(0.5));\r
     float strength = 0.05 / distanceToCenter - 0.1;\r
-    gl_FragColor = vec4(1.0, 1.0, 1.0, strength);
+    gl_FragColor = vec4(1.0, 1.0, 1.0, clamp(strength, 0.0, 1.0));
 
     #include <tonemapping_fragment>\r
     #include <colorspace_fragment>\r
