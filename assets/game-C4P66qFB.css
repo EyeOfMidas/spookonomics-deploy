@@ -688,19 +688,19 @@ ul#potion-properties-list li {
 #shop-header-container h1 {
     color: white;
     text-align: center;
-    margin: 16px;
+    margin: 8px;
 }
 
 #shop-left-side {
-    width: 432px;
+    width: 330px;
     padding: 16px;
 }
 
 #shop-potions-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 16px;
-    gap: 16px;
+    padding: 8px;
+    gap: 8px;
 }
 
 .potion-container {
@@ -708,7 +708,7 @@ ul#potion-properties-list li {
     border: 4px dashed #dec8ad;
     border-radius: 16px;
     padding: 4px;
-    width: 100px;
+    width: 80px;
 }
 
 .potion-container:hover {
@@ -743,8 +743,8 @@ ul#potion-properties-list li {
 #shop-shelves-container {
     display: flex;
     flex-direction: column;
-    padding: 16px;
-    gap: 34px;
+    padding: 8px;
+    gap: 24px;
 }
 
 .shop-shelf {
@@ -760,8 +760,8 @@ ul#potion-properties-list li {
     border: 4px dashed #dec8ad;
     border-radius: 16px;
     padding: 4px;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 
 .stocked-potion-container:hover {
@@ -787,16 +787,16 @@ ul#potion-properties-list li {
 }
 
 #shop-button-container {
-    height: 0;
+    position: relative;
 }
 
 #shop-button-inner-container {
-    position: relative;
+    position: absolute;
     padding: 2px;
     margin-top: -25px;
-    margin-left: 580px;
     border-radius: 32px;
     width: 180px;
+    right: 25px;
     background-color: var(--light-purple);
 }
 
@@ -859,15 +859,15 @@ ul#potion-properties-list li {
 .ingredient-sell-container {
     display: flex;
     flex-direction: row;
-    height: 126px;
+    height: 100px;
 }
 
 .ingredient-icon-container {
     border: 4px dashed #dec8ad;
     border-radius: 50px;
     margin: 15px;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     padding: 4px;
     position: relative;
 }
